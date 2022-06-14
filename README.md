@@ -1,19 +1,6 @@
-![CI](https://github.com/spinnaker-plugin-examples/springExamplePlugin/workflows/CI/badge.svg)
+![CI](https://github.com/spinnaker-plugin-examples/customArtifact/workflows/CI/badge.svg)
 
-This plugin exercises the Spring capabilities of Spinnaker plugins. There are no PF4J extension points or dependencies. Instead everything is Spring components.
-
-It tests the following cases and all of it works without having to use Kork plugin's "unsafe" mode:
-* Component and Primary Spring annotations are recognized
-* The Configuration Spring annotation will be recognized in a plugin bean so you can create beans that way
-* Spring package scanning of your plugin
-* New plugin beans are wired together
-* App beans are autowired into plugin beans
-* Plugin beans are autowired into the app beans and replace app beans if primary (this allows modifying existing spinnaker behavior)
-* Spring properties are recognized
-* Controllers add new endpoints
-* New dependencies that are not in Spinnaker can be used in your plugin beans
-
-Your plugin needs to extend SpringLoaderPlugin and implement getPackagesToScan(). See SpringExamplePlugin for an example.
+This plugin adds a new artifact. It also demonstrates how to add a plugin component to an autowired list in an app component.
 
 <h2>Usage</h2>
 
@@ -24,11 +11,8 @@ Your plugin needs to extend SpringLoaderPlugin and implement getPackagesToScan()
 spinnaker:
   extensibility:
     plugins:
-      Armory.SpringExamplePlugin:
+      Armory.CustomArtifact:
         enabled: true
-
-newproperties:
-  test: 'test1'
 ```
 
 Or use the [examplePluginRepository](https://github.com/spinnaker-plugin-examples/examplePluginRepository) to avoid copying the plugin `.zip` artifact.
