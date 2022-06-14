@@ -37,7 +37,10 @@ dependencies {
 
   compileOnly(enforcedPlatform("io.spinnaker.clouddriver:clouddriver-bom:${clouddriverVersion}"))
 
-  compileOnly ("io.spinnaker.kork:kork-plugins-spring-api")
+  compileOnly "io.spinnaker.clouddriver:clouddriver-artifacts"
+  compileOnly "io.spinnaker.kork:kork-plugins-spring-api"
+  compileOnly "io.spinnaker.kork:kork-credentials"
+  compileOnly "io.spinnaker.kork:kork-artifacts"
 
   compileOnly (group: 'io.spinnaker.clouddriver', name: 'clouddriver-core', version: "${clouddriverVersion}")
 
@@ -47,6 +50,8 @@ dependencies {
   testImplementation "io.spinnaker.clouddriver:clouddriver-api"
   testImplementation "io.spinnaker.clouddriver:clouddriver-api-tck"
   testImplementation "io.spinnaker.kork:kork-plugins-tck"
+
+  testImplementation "io.spinnaker.kork:kork-credentials"
 
   testImplementation "org.junit.jupiter:junit-jupiter-api:5.5.2"
   testImplementation "io.strikt:strikt-core:0.31.0"

@@ -33,7 +33,7 @@ class ClouddriverIntegrationTest : JUnit5Minutests {
             test("test") {
                 println(artifactCredentialsRepository.allCredentials)
                 expect {
-                    that(artifactCredentialsRepository.getCredentials("exampleName", "exampleType")).isNotNull()
+                    that(artifactCredentialsRepository.getCredentials("test1", "artifacts-example")).isNotNull()
                 }
             }
 

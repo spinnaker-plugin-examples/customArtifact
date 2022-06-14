@@ -19,3 +19,8 @@ spinnaker:
     plugins:
       Armory.CustomArtifact:
         enabled: true
+
+artifacts:
+  example:
+    accounts:
+    - name: test1
